@@ -107,4 +107,4 @@ export default SearchManufacturer
 
 {/**ternary used to declare that if the query has nothing to show nothing and when
                * something in there to show all possible options
-               */}
+               */} //not used in this code
