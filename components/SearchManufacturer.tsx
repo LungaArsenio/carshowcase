@@ -10,6 +10,11 @@ import Image from 'next/image'
 function SearchManufacturer({ manufacturer, setManufacturer }: SearchManufacturerProps) {
   const [query, setQuery] = useState("")
   //LOGIC/THOUGHT PROCESS FOR FILTEREDMANUFACTURERS FUNCTION
+  {/**
+    * This function filters the list of manufacturers based on the query input by the user.
+   * It uses the `includes` method to check if the query is present in the manufacturer's name.
+   * 
+    */}
 
 
 
