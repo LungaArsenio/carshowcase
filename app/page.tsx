@@ -1,3 +1,4 @@
+import CarCard from "@/components/CarCard";
 import CustomFilter from "@/components/CustomFilter";
 import Hero from "@/components/Hero";
 import SearchBar from "@/components/SearchBar";
@@ -5,7 +6,9 @@ import { fetchCars } from "@/utils";
 import Image from "next/image";
 
 export default async function Home() {
-  const allCars = await fetchCars
+  const allCars = await fetchCars();
+
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   console.log(allCars); //it doesn't actually shows on a browser console becuase every page in Next.JS is a server rendered page.
   return (
@@ -25,6 +28,21 @@ export default async function Home() {
             <CustomFilter />
         </div>
         </div>
+        {!isDataEmpty ? (
+          <section className="">
+            <div className="home__cars-wrapper">
+              {/* section where we map over the cars and for each car we show the Carcard component and pass the car object as a prop */}
+              {allCars?.map((car) => (
+                <CarCard car={car} />
+              ))}
+            </div>
+          </section>
+        ) : (
+            <div className="home__error-container">
+              <h2 className="text-black text-xl font-bold">Oops, no results</h2>
+              <p>{allCars?.message}</p>
+            </div>
+        )};
       </div>
    </main>
   );
