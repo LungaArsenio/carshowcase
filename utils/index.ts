@@ -25,7 +25,7 @@ export async function fetchCars() {
     }
 
 //this block of code actually return every car present instead of the detailed template showing only toyotacorola
-  const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla', {
+  const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=camry', {
     headers: headers,
   });
 
