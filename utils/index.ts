@@ -8,7 +8,7 @@
 // 	}
 // };
 
-import { carProps } from "@/types";
+import { carProps, FilterProps } from "@/types";
 
 // try {
 // 	const response = await fetch(url, options);
@@ -20,14 +20,16 @@ import { carProps } from "@/types";
 //utils just means utilities
 
 //function used to make a request to the API
-export async function fetchCars() {
+export async function fetchCars(filters: FilterProps) {
+const { manufacturer, model, year, fuel } = filters;
+
   const headers = {
       'x-rapidapi-key': '0be88aa644mshdbca557037153bfp1c278ejsne051fecc9524',
       'x-rapidapi-host': 'cars-by-api-ninjas.p.rapidapi.com'
     }
 
-//this block of code actually return every car present instead of the detailed template showing only toyotacorola
-  const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=q3', {
+//dynamically updating the url based on the filters
+  const response = await fetch(`https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&fuel_type=${fuel}`, {
     headers: headers,
   });
 

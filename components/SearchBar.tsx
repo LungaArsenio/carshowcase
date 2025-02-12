@@ -53,8 +53,7 @@ function SearchBar() {
         searchParams.delete("manufacturer")
       }
 
-      const newPathName = `${window.location.pathname} ?
-      ${searchParams.toString()}`;
+      const newPathName = `${window.location.pathname}?${searchParams.toString()}`;
       router.push(newPathName);
     }
 
