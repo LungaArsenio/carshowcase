@@ -20,7 +20,7 @@ export default async function Home({ searchParams }) {
   return (
     <main className="overflow-hidden">
       <Hero />
-
+ 
       <div id="discover" className="mt-12 padding-x padding-y max-width">
         <div className="home__text-container">
           <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
