@@ -24,8 +24,8 @@ export async function fetchCars(filters: FilterProps) {
 const { manufacturer, model, year, fuel } = filters;
 
   const headers = {
-      'x-rapidapi-key': '0be88aa644mshdbca557037153bfp1c278ejsne051fecc9524',
-      'x-rapidapi-host': 'cars-by-api-ninjas.p.rapidapi.com'
+    'x-rapidapi-key': '0be88aa644mshdbca557037153bfp1c278ejsne051fecc9524',
+    'x-rapidapi-host': 'cars-by-api-ninjas.p.rapidapi.com'
     }
 
 //dynamically updating the url based on the filters
